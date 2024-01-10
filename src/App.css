@@ -1,0 +1,541 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&display=swap");
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    background: #ededed;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a,
+p {
+    text-decoration: none;
+}
+
+/* Navbar CSS */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #ffffff;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+    color: #000;
+}
+
+.nav-menu {
+    background-color: #ffffff;
+    width: 150px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+}
+
+.nav-menu.active {
+    background: #ccc;
+    left: 0;
+    transition: 450ms;
+    padding-top: 20px;
+    z-index: 10;
+}
+
+.nav-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+}
+
+.nav-text a {
+    text-decoration: none;
+    color: #151414;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+}
+
+.nav-text a:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+.nav-menu-items {
+    width: 100%;
+    padding: 0;
+}
+
+.navbar-toggle {
+    background-color: #ffffff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Card CSS */
+.card {
+    display: flex;
+    background-color: #ededed;
+}
+
+.card .card-title,
+.card .card-price {
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    padding: 8px;
+    /* Font/Dark */
+    color: #1a1f16;
+}
+
+.card .card-price {
+    color: red;
+}
+
+.card .card-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+/* Product Detail Css */
+.product-detail {
+    display: flex;
+    margin: 40px 0 0 200px;
+}
+
+.product-detail .product-img {
+    height: 500px;
+    width: 400px;
+    border-radius: 8px;
+}
+
+.product-detail .product-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.product-detail .img-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.product-detail .product-info {
+    width: 50%;
+}
+
+.product-info {
+    padding-left: 40px;
+}
+
+.product-info .product-title {
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 50px;
+    color: #1a1f16;
+    padding-top: 8px;
+}
+
+.product-info .product-text {
+    font-size: 18px;
+}
+
+.product-info .product-gift-title {
+    font-weight: bold;
+    color: #ff0000;
+    font-size: 22px;
+}
+
+.product-info .product-gift {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333333;
+}
+
+.product-info .product-old-price,
+.product-info .product-price {
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 31.25px;
+    line-height: 38px;
+    color: #1a1f16;
+    padding-top: 8px;
+}
+
+.product-info .product-price {
+    color: red;
+}
+
+.product-info .product-desc {
+    font-family: "Cabin";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #1a1f16;
+    padding-top: 8px;
+}
+
+.btn-detail {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn-add-detail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    padding: 8px 24px;
+    gap: 8px;
+    width: 174px;
+    height: 40px;
+    background: #1a1f16;
+    color: #ffffff;
+    border-radius: 14px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.btn-add-detail:hover {
+    opacity: 0.9;
+}
+
+/* Description */
+.desc {
+    width: 70%;
+    margin: 40px 0 0 200px;
+}
+
+.desc .h {
+    width: 100%;
+    height: 0px;
+    border: 3px solid rgba(26, 31, 22, 0.5);
+}
+
+.desc .title-desc {
+    margin-top: 32px;
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 31.25px;
+    line-height: 38px;
+    /* identical to box height */
+
+    /* Font/Dark */
+
+    color: #1a1f16;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.desc .text {
+    margin-top: 8px;
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    /* Font/Tertiary */
+    color: #60695c;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+/* Bag Items CSS */
+.content {
+    width: 60%;
+    margin: 40px 0 0 200px;
+}
+
+.bag-items .bags {
+    margin-top: 8px;
+}
+
+.bag-items .k {
+    position: absolute;
+    width: 600px;
+    height: 0px;
+    left: 950px;
+    top: 380px;
+    border: 2px solid rgba(26, 31, 22, 0.5);
+    transform: rotate(90deg);
+}
+
+.bag-items .bag-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-top: 18px;
+}
+
+.bag-items .bag-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.bag-items .btn-add {
+    margin-top: 42px;
+}
+
+/* CheckOut */
+.btn-back-to {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 24px;
+    gap: 8px;
+    width: 98px;
+    height: 35px;
+    border: 1px solid #1a1f16;
+    border-radius: 11px;
+    cursor: pointer;
+}
+
+.btn-back-to .back {
+    color: #1a1f16;
+}
+
+.btn-go-home {
+    padding: 0.75rem 1.6875rem 0.6875rem 1.6875rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    background-color: #3b71ca;
+    color: #fff;
+    box-shadow: 0 4px 9px -4px #3b71ca;
+    display: block;
+    width: 100%;
+
+    text-transform: uppercase;
+    border: 0;
+    font-weight: 500;
+
+    border-radius: 0.3rem;
+}
+
+/* Shipping-address */
+.shipping-address {
+    padding: 16px;
+    gap: 8px;
+    background: #ffffff;
+    border-radius: 13px;
+}
+
+.shipping-address .title {
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 31.25px;
+    line-height: 38px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #1a1f16;
+}
+
+.shipping-address .main-content {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shipping-address .current-address .name,
+.shipping-address .current-address .address {
+    width: 50%;
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #1a1f16;
+}
+
+.shipping-address .actions .btn-change {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 24px;
+    gap: 8px;
+    width: 98px;
+    height: 35px;
+    border: 1px solid #1a1f16;
+    border-radius: 11px;
+    cursor: pointer;
+    color: #1a1f16;
+}
+
+.shipping-address .actions .btn-change:hover {
+    opacity: 0.9;
+}
+
+/* Payment Method */
+.payment-method {
+    margin: 20px auto;
+    padding: 16px;
+    gap: 8px;
+    background: #ffffff;
+    border-radius: 13px;
+}
+
+.payment-method .title {
+    font-family: "Cabin";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 31.25px;
+    line-height: 38px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #1a1f16;
+}
+
+.payment-method .main-content {
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.payment-method .actions .btn-change {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 24px;
+    gap: 8px;
+    width: 98px;
+    height: 35px;
+    border: 1px solid #1a1f16;
+    border-radius: 11px;
+    cursor: pointer;
+    color: #1a1f16;
+}
+
+.payment-method .actions .btn-change:hover {
+    opacity: 0.9;
+}
+
+/* Form Address */
+.form-address {
+    background: #fff;
+    margin: 50px auto;
+    padding: 50px;
+    width: 700px;
+    border-radius: 10px;
+}
+
+/* Cart Empty */
+.cart-empty {
+    font-size: 20px;
+    margin-top: 2rem;
+    color: rgb(84, 84, 84);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start-shopping {
+    margin-top: 1rem;
+    color: gray;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.form-address .nav-address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+/* Category */
+.cat-menu{
+    border-radius: 7px 0 0 7px !important;
+}
+.category-item {
+    width: 200px;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    background: #ccc;
+}
+
+/* Carousel */
+.carousel-container {
+    width: 70%;
+    height: 100%;
+}
+
+/* THE LOADING EFFECT */
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .form-address {
+        max-width: 90%;
+    }
+}
